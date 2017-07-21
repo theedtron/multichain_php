@@ -21,7 +21,7 @@ class TestController extends Controller
     public function easyCoin(){
 
         $bitcoin = new Bitcoin(env('JSON_RPC_USERNAME'),env('JSON_RPC_PASSWORD'),env('JSON_RPC_URL'),env('JSON_RPC_PORT'));
-        $res = $bitcoin->getInfo();
+        $res = $bitcoin->getinfo();
         print_r($bitcoin->error.PHP_EOL);
         print_r($bitcoin->response.PHP_EOL);
         print_r($bitcoin->status.PHP_EOL);
