@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('test/chain','TestController@testCmds');
+Route::get('test/easy','TestController@easyCoin');
