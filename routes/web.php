@@ -17,3 +17,4 @@ Route::get('/', function () {
 
 Route::get('test/chain','TestController@testCmds');
 Route::get('test/easy','TestController@easyCoin');
+Route::get('test/curl','TestController@curlComm');
