@@ -35,6 +35,17 @@ class TestController extends Controller
     }
 
     public function curlComm(){
+        $a = 'curl -s --user '.env('JSON_RPC_USERNAME').':'.env('JSON_RPC_PASSWORD').' --data-binary \'';
+        $b = '{"jsonrpc": "1.0", "id":"curltest", "method": "getinfo", "params": [';
+        $c = '] }\' -H "content-type: text/plain;" http://127.0.0.1:'.env('JSON_RPC_PORT').'/';
+        $cmd = $a . $b . $c;
+
+        echo "\n<h2>Raw Output</h2><pre>\n";
+        $ret=system($cmd);
+
+        echo "\n<h2>Decoded Output</h2>\n";
+        $rets = json_decode($ret, true);
+        print_r($rets);
 
     }
 }
